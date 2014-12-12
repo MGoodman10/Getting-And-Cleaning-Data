@@ -3,6 +3,7 @@ title: "CodeBook"
 output: html_document
 ---
 ## Original data source information
+#### Location
 Information about the original data is located at:
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
@@ -11,26 +12,26 @@ Information for this project was downloaded from:
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
-**NOTE** The R script assumes the file is downloaded into a "./UCI HAR Dataset" directory and unzipped without altering the sub-directory and file names.  If this is not true, the R script will need to be edited to update the file names and locations in section 1.1 and 1.2 of the script.
+**NOTE:** The R script assumes the file is downloaded into a "./UCI HAR Dataset" directory and unzipped without altering the sub-directory and file names.  If this is not true, the R script will need to be edited to update the file names and locations in section 1.1 and 1.2 of the script.
 
-### Origination information
+#### Attribution
 
-==================================================================  
 Human Activity Recognition Using Smartphones Dataset  
-Version 1.0  
-==================================================================  
+Version 1.0 
+
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.  
 Smartlab - Non Linear Complex Systems Laboratory  
 DITEN - Università degli Studi di Genova.  
 Via Opera Pia 11A, I-16145, Genoa, Italy.  
 activityrecognition@smartlab.ws  
-www.smartlab.ws  
-==================================================================
+http://www.smartlab.ws  
 
-### Data collection details
+#### Data collection details
+
 Detailed information about the experiment and the data collection can be found in the "README.txt" file that will unzip with the rest of the data.
 
 ## Transformations
+
 The run_analysis.R script performs the following transformations:
 
 1. Merge the measurement, activity and subject data from the test and training datsets into a combined dataset.
@@ -44,11 +45,11 @@ The output from this transformation is written to "averages_data.txt" in the wor
 
 ## Variables
 
-### Subject
+#### Subject
 
 Each subject is identifed by there unique integer subject ID.
 
-### Activity
+#### Activity
 
 Each subject includes 1 to 5 activities.  Activities are character strings with one of the following values:
 
@@ -59,16 +60,18 @@ Each subject includes 1 to 5 activities.  Activities are character strings with 
 * STANDING
 * LAYING
 
-### Measurement Statistics
+#### Measurement Statistics
 
 Each statistic is the mean value of the original observation data for each subject/activity pair.  Each variable is either the mean of means (i.e.,
 variables with "Mean" near the end of their name) or the mean of standard deviations (i.e., variables with "StdDev" near the end of their name) for a subject/activity combiniation. All values are numeric.
 
-### Units of measure
+#### Units of measure
+
 * Detailed iinformation on the unnits of measure are included in the "features_info.txt" file that will unzip with the rest of the data  
 * Original observations are normalized and bounded within [-1,1].
 
-### Measurement variables included in the final dataset
+#### Measurement variables included in the final dataset
+
 * Time domain body acceleration mean along X, Y, and Z:
     + MeanTimeBodyAccMeanX
     + MeanTimeBodyAccMeanY
