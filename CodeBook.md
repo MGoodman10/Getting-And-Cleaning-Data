@@ -2,25 +2,50 @@
 title: "CodeBook"
 output: html_document
 ---
+## Original data source information
+Information about the original data is located at:
 
-## Subject
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+Information for this project was downloaded from:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+**NOTE** The R script assumes the file is downloaded into a "./UCI HAR Dataset" directory and unzipped without altering the sub-directory and file names.  If this is not true, the R script will need to be edited to update the file names and locations in section 1.1 and 1.2 of the script.
+
+## Transformations
+The run_analysis.R script performs the following transformations:
+
+1. Merge the measurement, activity and subject data from the test and training datsets into a combined dataset.
+2. Select only data columns containing mean and standard deviation data
+3. Replace column names with more readable column names
+4. Replace numeric activity codes with activity names
+5. Merge subject, activity and observation data into one dataset
+6. Calculate the mean value of each measurment for each subject/activity combination
+
+The output from this transformation is written to "averages_data.txt" in the working directory.
+
+## Variables
+
+### Subject
 
 Each subject is identifed by there unique integer subject ID.
 
-## Activity
+### Activity
 
 Each subject includes 1 to 5 activities.  Activities are character strings with one of the following values:
 
-* Walking
-* Walking_Upstairs
-* Walking_Downstairs
-* Sitting
-* Standing
-* Laying
+* WALKING
+* WALKING_UPSTAIRS
+* WALKING_DOWNSTAIRS
+* SITTING
+* STANDING
+* LAYING
 
-## Measurement Statistics
+### Measurement Statistics
 
-All variables are either the mean of a measurement for a subject/activity combination or the standard deviation for a subject/activity combiniation. This is indicated by the initial Mean in the variable name. All values are numeric.
+Each statistic is the mean value of the original observation data for each subject/activity pair.  Each variable is either the mean of means (i.e.,
+variables with "Mean" near the end of their name) or the mean of standard deviations (i.e., variables with "StdDev" near the end of their name) for a subject/activity combiniation. All values are numeric.
 
 * Time domain body acceleration mean along X, Y, and Z:
     + MeanTimeBodyAccMeanX
