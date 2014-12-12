@@ -65,12 +65,12 @@ Each subject includes 1 to 5 activities.  Activities are character strings with 
 Each statistic is the mean value of the original observation data for each subject/activity pair.  Each variable is either the mean of means (i.e.,
 variables with "Mean" near the end of their name) or the mean of standard deviations (i.e., variables with "StdDev" near the end of their name) for a subject/activity combiniation. All values are numeric.
 
-#### Units of measure
+##### Units of measure
 
 * Detailed iinformation on the unnits of measure are included in the "features_info.txt" file that will unzip with the rest of the data  
-* Original observations are normalized and bounded within [-1,1].
+* Original observations are normalized and bounded within [-1,1]
 
-#### Measurement variables included in the final dataset
+##### Measurement variables included in the final dataset
 
 * Time domain body acceleration mean along X, Y, and Z:
     + MeanTimeBodyAccMeanX
